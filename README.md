@@ -1,6 +1,8 @@
 # pet-shop-project
 
 Проект - Find me a Petshop Web Application
+
+Тим:
 Елена Божарова, 181053
 Марија Крпачовска, 181021
 Камелија Крстевкса, 181058
