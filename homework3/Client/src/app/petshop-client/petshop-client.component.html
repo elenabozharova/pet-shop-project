@@ -1,0 +1,13 @@
+    <h2 *ngIf="petshopList">List of Petshops in Skopje</h2>
+    <div>
+         <ul *ngFor="let shop of petshopList;let index=index">
+           <div class="row">
+            <a [routerLink]="['/petshop/details', shop.Id]"><p>{{shop.Title}}</p></a>
+            <br/>
+          </div>
+         </ul>
+     </div>
+
+
+
+
