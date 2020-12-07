@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Petshops">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="Rating" Type="float" />
+    <Property Name="ReviewCount" Type="int" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Attributes" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+    <Property Name="PlusCode" Type="varchar" MaxLength="50" />
+    <Property Name="Website" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="SaturdayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="SundayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="MondayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="TuesdayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="WednesdayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="ThursdayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="FridayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="ImgURL" Type="varchar" MaxLength="500" />
+    <Property Name="IsClaimed" Type="bit" Nullable="false" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="Longitude" Type="float" />
+  </EntityType>
+  <EntityContainer Name="dbModelStoreContainer">
+    <EntitySet Name="Petshops" EntityType="Self.Petshops" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

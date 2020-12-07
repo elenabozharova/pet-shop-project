@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Petshops">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="Rating" Type="float" />
+          <Property Name="ReviewCount" Type="int" />
+          <Property Name="Category" Type="varchar" MaxLength="50" />
+          <Property Name="Attributes" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="PlusCode" Type="varchar" MaxLength="50" />
+          <Property Name="Website" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="SaturdayWorkingHours" Type="varchar" MaxLength="50" />
+          <Property Name="SundayWorkingHours" Type="varchar" MaxLength="50" />
+          <Property Name="MondayWorkingHours" Type="varchar" MaxLength="50" />
+          <Property Name="TuesdayWorkingHours" Type="varchar" MaxLength="50" />
+          <Property Name="WednesdayWorkingHours" Type="varchar" MaxLength="50" />
+          <Property Name="ThursdayWorkingHours" Type="varchar" MaxLength="50" />
+          <Property Name="FridayWorkingHours" Type="varchar" MaxLength="50" />
+          <Property Name="ImgURL" Type="varchar" MaxLength="500" />
+          <Property Name="IsClaimed" Type="bit" Nullable="false" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="Longitude" Type="float" />
+        </EntityType>
+        <EntityContainer Name="dbModelStoreContainer">
+          <EntitySet Name="Petshops" EntityType="Self.Petshops" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Petshop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rating" Type="Double" />
+          <Property Name="ReviewCount" Type="Int32" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Attributes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PlusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SaturdayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SundayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MondayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TuesdayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WednesdayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ThursdayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FridayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImgURL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IsClaimed" Type="Boolean" Nullable="false" />
+          <Property Name="Latitude" Type="Double" />
+          <Property Name="Longitude" Type="Double" />
+        </EntityType>
+        <EntityContainer Name="DBModelPetshops" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Petshops" EntityType="Self.Petshop" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="DBModelPetshops">
+          <EntitySetMapping Name="Petshops">
+            <EntityTypeMapping TypeName="dbModel.Petshop">
+              <MappingFragment StoreEntitySet="Petshops">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="ReviewCount" ColumnName="ReviewCount" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Attributes" ColumnName="Attributes" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PlusCode" ColumnName="PlusCode" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SaturdayWorkingHours" ColumnName="SaturdayWorkingHours" />
+                <ScalarProperty Name="SundayWorkingHours" ColumnName="SundayWorkingHours" />
+                <ScalarProperty Name="MondayWorkingHours" ColumnName="MondayWorkingHours" />
+                <ScalarProperty Name="TuesdayWorkingHours" ColumnName="TuesdayWorkingHours" />
+                <ScalarProperty Name="WednesdayWorkingHours" ColumnName="WednesdayWorkingHours" />
+                <ScalarProperty Name="ThursdayWorkingHours" ColumnName="ThursdayWorkingHours" />
+                <ScalarProperty Name="FridayWorkingHours" ColumnName="FridayWorkingHours" />
+                <ScalarProperty Name="ImgURL" ColumnName="ImgURL" />
+                <ScalarProperty Name="IsClaimed" ColumnName="IsClaimed" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
