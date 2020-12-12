@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Petshop } from './../shared/petshop.model';
+import { PetshopsService } from './../shared/petshops.service';
 
 @Component({
   selector: 'app-petshop',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetshopComponent implements OnInit {
 
-  constructor() { }
+  petshop: Petshop;
+  petshopId: number;
+  keyword = 'id';
+  constructor(private petshopsService: PetshopsService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+     params => {
+          // tslint:disable-next-line: no-string-literal
+          this.petshopId = +params.id;
+      }
+    );
+    this.petshopsService.getPetshop(this.petshopId).then(data => this.petshop = data);
+    console.log(this.petshop);
   }
 
 }

@@ -1,13 +1,39 @@
     <h2 *ngIf="petshopList">List of Petshops in Skopje</h2>
-    <div>
-         <ul *ngFor="let shop of petshopList;let index=index">
-           <div class="row">
-            <a [routerLink]="['/petshop/details', shop.Id]"><p>{{shop.Title}}</p></a>
-            <br/>
-          </div>
-         </ul>
-     </div>
 
+<div class="container mat-elevation-z8">
+    <mat-table [dataSource]="dataSource">
+ <!-- Title Column -->
+ <ng-container matColumnDef="Title">
+  <th mat-header-cell *matHeaderCellDef> Title </th>
+  <td mat-cell *matCellDef="let element"> {{element.Title}} </td>
+  </ng-container>
 
+<!-- Address Column -->
+<ng-container matColumnDef="Address">
+  <th mat-header-cell *matHeaderCellDef> Address </th>
+  <td mat-cell *matCellDef="let element"> {{element.Address}} </td>
+</ng-container>
 
+<!-- Rating Column -->
+<ng-container matColumnDef="Rating">
+  <th mat-header-cell *matHeaderCellDef>Rating</th>
+  <td mat-cell *matCellDef="let element"> {{element.Rating}}
+    <div class="col-md-4">
+      <div class='col-md-8'>
+        <app-star [rating]="element.Rating"></app-star>
+      </div>
+    </div>
+
+  </td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</mat-table>
+<mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+
+</mat-paginator>
+
+</div>
 

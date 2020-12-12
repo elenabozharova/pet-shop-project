@@ -1,0 +1,12 @@
+.title {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-style: normal;
+  color: "#ff8b3d";
+  font-size: x-large;
+}
+
+img {
+  height:50%;
+  width: 60%;
+}

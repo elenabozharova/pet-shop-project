@@ -9,19 +9,25 @@ import { PetshopsService } from './shared/petshops.service';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home-component/home-component.component';
 import { PetshopComponent } from './petshop/petshop.component';
+import { StarComponent } from './shared/star/star.component';
+import {AngularmaterialModule} from './material/angularmaterial/angularmaterial.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     PetshopClientComponent,
     HomeComponent,
-    PetshopComponent
+    PetshopComponent,
+    StarComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularmaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [PetshopsService],
   bootstrap: [AppComponent]
