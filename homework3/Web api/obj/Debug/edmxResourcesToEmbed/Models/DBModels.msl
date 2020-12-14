@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="DBModelPetshops">
+  <EntityContainerMapping StorageEntityContainer="Web_apiModelsStoreContainer" CdmEntityContainer="DBModelPetshops">
     <EntitySetMapping Name="Petshops">
-      <EntityTypeMapping TypeName="dbModel.Petshop">
+      <EntityTypeMapping TypeName="Web_api.Models.Petshop">
         <MappingFragment StoreEntitySet="Petshops">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />

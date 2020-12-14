@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0697ab65db1745f7a133695ec24309c3" Name="Diagram1" ZoomLevel="61">
-        <EntityTypeShape EntityType="dbModel.Petshop" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="004860ce14934e448f18befe6e01a954" Name="Diagram1">
+        <EntityTypeShape EntityType="Web_api.Models.Petshop" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
