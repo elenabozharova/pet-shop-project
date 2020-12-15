@@ -1,3 +1,24 @@
 .mat-column {
   text-align: right;
 }
+.mat-paginator-container {
+  display: block !important;
+}
+
+th.mat-header-cell {
+  text-align: center !important;
+}
+
+.container-md{
+  max-width: unset !important;
+}
+
+.container-lg, .container-md, .container-sm {
+    max-width: unset;
+}
+.container {
+  width: 1200px;
+}
+ng-container {
+  width: 1200px !important;
+}

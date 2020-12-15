@@ -1,2 +1,25 @@
-<p>{{petshop.Title}}</p>
+
+<div class="mapdiv container">
+  <div class="row">
+    <div class="col-md-4">
+      <h1>{{petshop?.Title}}</h1>
+      <h3 *ngIf="petshop?.Address!=''">Located in: {{petshop?.Address}} </h3>
+      <h2>Working hours:</h2>
+      <ul>
+        <li>Monday: {{petshop?.MondayWorkingHours}}</li>
+        <li>Tuesday: {{petshop?.TuesdayWorkingHours}}</li>
+        <li>Wednesday: {{petshop?.WednesdayWorkingHours}}</li>
+        <li>Thursday: {{petshop?.ThursdayWorkingHours}}</li>
+        <li>Friday: {{petshop?.FridayWorkingHours}}</li>
+        <li>Saturday: {{petshop?.SaturdayWorkingHours}}</li>
+        <li>Sunday: {{petshop?.SundayWorkingHours}}</li>
+      </ul>
+      <div *ngIf="petshop?.Website">
+        <h2>Website: <a href="#" (click)="websiteClicked()" >{{petshop?.Website}}</a></h2>
+      </div>
+    </div>
+    <div class="col-md-8" id="petshop_map"></div>
+  </div>
+</div>
+
 

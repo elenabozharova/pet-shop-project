@@ -13,6 +13,8 @@ import { StarComponent } from './shared/star/star.component';
 import {AngularmaterialModule} from './material/angularmaterial/angularmaterial.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CommonModule,
     HttpClientModule,
     AngularmaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+        apiKey: 'AIzaSyDn5hG4-hJrPzQ9VkXXd9hVaw2kr-UdaoQ'
+    })
   ],
   providers: [PetshopsService],
   bootstrap: [AppComponent]
