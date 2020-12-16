@@ -25,7 +25,7 @@ export class PetshopClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getPetshops().then(
-      res => {
+     res => {
         this.petshopList = res as Petshop[];
         this.dataSource = new MatTableDataSource(this.petshopList);
         this.dataSource.paginator = this.paginator;
@@ -43,16 +43,10 @@ export class PetshopClientComponent implements OnInit {
     console.log(this.petShopsFiltered);
   }
 
-  sortByName(): void{
-    this.petshopsSorted = this.petshopList.sort();
-  }
-
-  sortByAddress(): void {
-
-  }
-
-  sortByRating(): void{
-
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
 
 }

@@ -12,6 +12,9 @@ import { PetshopComponent } from './petshop/petshop.component';
 import { StarComponent } from './shared/star/star.component';
 import {AngularmaterialModule} from './material/angularmaterial/angularmaterial.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AuthenticationComponent } from './shared/authentication/authentication.component';
+
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PetshopClientComponent,
     HomeComponent,
     PetshopComponent,
-    StarComponent
+    StarComponent,
+    AuthenticationComponent
   ],
   imports: [
   BrowserModule,
@@ -27,7 +31,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CommonModule,
     HttpClientModule,
     AngularmaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+        apiKey: 'AIzaSyDn5hG4-hJrPzQ9VkXXd9hVaw2kr-UdaoQ'
+    })
   ],
   providers: [PetshopsService],
   bootstrap: [AppComponent]

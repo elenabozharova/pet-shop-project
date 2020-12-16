@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home-component/home-component.component';
 import { PetshopClientComponent } from './petshop-client/petshop-client.component';
 import { PetshopComponent } from './petshop/petshop.component';
+import { AuthenticationComponent } from './shared/authentication/authentication.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'petshop/details/:id',
     component: PetshopComponent
+  },
+  {
+    path: 'login',
+    component: AuthenticationComponent
   },
   {
     path: '**',

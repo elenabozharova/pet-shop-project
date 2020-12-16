@@ -1,11 +1,13 @@
-    <h2 *ngIf="petshopList">List of Petshops in Skopje</h2>
-
+<h2 *ngIf="petshopList">List of Petshops in Skopje</h2>
 <div class="container mat-elevation-z8">
-    <mat-table [dataSource]="dataSource">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+<mat-table [dataSource]="dataSource">
  <!-- Title Column -->
  <ng-container matColumnDef="Title">
-  <th mat-header-cell *matHeaderCellDef> Title </th>
-  <td mat-cell *matCellDef="let element"> {{element.Title}} </td>
+<th mat-header-cell *matHeaderCellDef> Title </th>
+  <td mat-cell *matCellDef="let element"><a [routerLink]="['/petshop/details', element.Id]" routerLinkActive="router-link-active" >{{element.Title}}</a>  </td>
   </ng-container>
 
 <!-- Address Column -->
