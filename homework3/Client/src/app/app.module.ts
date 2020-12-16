@@ -12,6 +12,7 @@ import { PetshopComponent } from './petshop/petshop.component';
 import { StarComponent } from './shared/star/star.component';
 import {AngularmaterialModule} from './material/angularmaterial/angularmaterial.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AuthenticationComponent } from './shared/authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PetshopClientComponent,
     HomeComponent,
     PetshopComponent,
-    StarComponent
+    StarComponent,
+    AuthenticationComponent
   ],
   imports: [
   BrowserModule,
