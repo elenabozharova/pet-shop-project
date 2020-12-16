@@ -14,8 +14,6 @@ import {AngularmaterialModule} from './material/angularmaterial/angularmaterial.
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthenticationComponent } from './shared/authentication/authentication.component';
 
-import { AgmCoreModule } from '@agm/core';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,10 +29,7 @@ import { AgmCoreModule } from '@agm/core';
     CommonModule,
     HttpClientModule,
     AngularmaterialModule,
-    BrowserAnimationsModule,
-    AgmCoreModule.forRoot({
-        apiKey: 'AIzaSyDn5hG4-hJrPzQ9VkXXd9hVaw2kr-UdaoQ'
-    })
+    BrowserAnimationsModule
   ],
   providers: [PetshopsService],
   bootstrap: [AppComponent]
