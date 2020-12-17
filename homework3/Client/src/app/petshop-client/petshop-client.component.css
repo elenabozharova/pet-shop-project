@@ -22,3 +22,16 @@ th.mat-header-cell {
 ng-container {
   width: 1200px !important;
 }
+
+img{
+  width: 200px;
+  height: 200px;
+  border-radius: 20%;
+  margin-left: 0%;
+}
+
+.mat-sort-header{
+  color: black;
+  font-size: large;
+  text-align: center;font-weight: bold;
+}
