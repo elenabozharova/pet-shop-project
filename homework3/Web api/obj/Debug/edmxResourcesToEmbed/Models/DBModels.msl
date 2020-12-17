@@ -1,8 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="DBModelPetshops">
+  <EntityContainerMapping StorageEntityContainer="Web_apiModelsStoreContainer" CdmEntityContainer="DBModelPetshops">
+    <EntitySetMapping Name="Commenteds">
+      <EntityTypeMapping TypeName="Web_api.Models.Commented">
+        <MappingFragment StoreEntitySet="Commented">
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+          <ScalarProperty Name="Id_petshop" ColumnName="Id_petshop" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Petshops">
-      <EntityTypeMapping TypeName="dbModel.Petshop">
+      <EntityTypeMapping TypeName="Web_api.Models.Petshop">
         <MappingFragment StoreEntitySet="Petshops">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -28,5 +37,48 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="results_final">
+      <EntityTypeMapping TypeName="Web_api.Models.results_final">
+        <MappingFragment StoreEntitySet="results_final">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="reviewCount" ColumnName="reviewCount" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="attributes" ColumnName="attributes" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="plusCode" ColumnName="plusCode" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="saturday" ColumnName="saturday" />
+          <ScalarProperty Name="sunday" ColumnName="sunday" />
+          <ScalarProperty Name="monday" ColumnName="monday" />
+          <ScalarProperty Name="tuesday" ColumnName="tuesday" />
+          <ScalarProperty Name="wednesday" ColumnName="wednesday" />
+          <ScalarProperty Name="thursday" ColumnName="thursday" />
+          <ScalarProperty Name="friday" ColumnName="friday" />
+          <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
+          <ScalarProperty Name="isClaimed" ColumnName="isClaimed" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Web_api.Models.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Favorite" TypeName="Web_api.Models.Favorite" StoreEntitySet="Favorite">
+      <EndProperty Name="Users">
+        <ScalarProperty Name="Id" ColumnName="Id_user" />
+      </EndProperty>
+      <EndProperty Name="Petshops">
+        <ScalarProperty Name="Id" ColumnName="Id_petshop" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>
