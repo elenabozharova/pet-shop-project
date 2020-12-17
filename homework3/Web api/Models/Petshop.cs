@@ -14,6 +14,13 @@ namespace Web_api.Models
     
     public partial class Petshop
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Petshop()
+        {
+            this.Commenteds = new HashSet<Commented>();
+            this.Users = new HashSet<User>();
+        }
+    
         public int Id { get; set; }
         public string Title { get; set; }
         public Nullable<double> Rating { get; set; }
@@ -35,5 +42,10 @@ namespace Web_api.Models
         public bool IsClaimed { get; set; }
         public Nullable<double> Latitude { get; set; }
         public Nullable<double> Longitude { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Commented> Commenteds { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }
