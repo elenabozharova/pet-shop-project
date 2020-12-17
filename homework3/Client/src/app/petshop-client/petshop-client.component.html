@@ -3,22 +3,27 @@
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
-<mat-table [dataSource]="dataSource">
+<mat-table matSort [dataSource]="dataSource">
  <!-- Title Column -->
  <ng-container matColumnDef="Title">
-<th mat-header-cell *matHeaderCellDef> Title </th>
-  <td mat-cell *matCellDef="let element"><a [routerLink]="['/petshop/details', element.Id]" routerLinkActive="router-link-active" >{{element.Title}}</a>  </td>
+<th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+  <td mat-cell *matCellDef="let element; let i = index"><a [routerLink]="['/petshop/details', element.Id]" routerLinkActive="router-link-active" >
+  <img *ngIf="element.ImgUrl!='' && element.ImgURL!=null" [src]="element.ImgURL" onError="this.src='../../assets/img/petshop1.jpg' "/>
+  <img *ngIf="!element.ImgURL && i%2 ==0" src="../../assets/img/petshop1.jpg"/>
+  <img *ngIf="!element.ImgURL && i%2 !=0" src="../../assets/img/petshop2.png"/>
+  {{element.Title}}
+</a>  </td>
   </ng-container>
 
 <!-- Address Column -->
 <ng-container matColumnDef="Address">
-  <th mat-header-cell *matHeaderCellDef> Address </th>
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
   <td mat-cell *matCellDef="let element"> {{element.Address}} </td>
 </ng-container>
 
 <!-- Rating Column -->
 <ng-container matColumnDef="Rating">
-  <th mat-header-cell *matHeaderCellDef>Rating</th>
+  <th mat-header-cell *matHeaderCellDef mat-sort-header>Rating</th>
   <td mat-cell *matCellDef="let element"> {{element.Rating}}
     <div class="col-md-4">
       <div class='col-md-8'>
@@ -33,7 +38,7 @@
 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </mat-table>
-<mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+<mat-paginator [pageSizeOptions]="[10,20,30]" showFirstLastButtons>
 
 </mat-paginator>
 

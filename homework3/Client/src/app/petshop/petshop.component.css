@@ -13,4 +13,10 @@ li{
 h1,h2,h3 {
   font-family: 'Courier New', Courier, monospace;
 }
-
+.arrow{
+  widows: 100px;
+  align-items: left;
+}
+.form-control{
+  max-width: 200px;
+}
