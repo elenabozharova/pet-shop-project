@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,6 +24,7 @@
     "@angular/router": "~10.0.6",
     "@types/googlemaps": "^3.40.5",
     "@types/ol": "^6.4.2",
+    "cors": "^2.8.5",
     "font-awesome": "^4.7.0",
     "material-design-icons": "^3.0.1",
     "ol": "^6.4.3",

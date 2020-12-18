@@ -16,6 +16,9 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { AgmCoreModule } from '@agm/core';
 import { AuthenticationComponent } from './shared/authentication/authentication/authentication.component';
+import { RegisterComponent } from './shared/register/register.component';
+import { FormsModule } from '@angular/forms';
+import { CustombuttonComponent } from './shared/custombutton/custombutton.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { AuthenticationComponent } from './shared/authentication/authentication/
     HomeComponent,
     PetshopComponent,
     StarComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    RegisterComponent,
+    CustombuttonComponent
   ],
   imports: [
   BrowserModule,
@@ -33,7 +38,8 @@ import { AuthenticationComponent } from './shared/authentication/authentication/
     HttpClientModule,
     AngularmaterialModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers: [PetshopsService],
   bootstrap: [AppComponent]

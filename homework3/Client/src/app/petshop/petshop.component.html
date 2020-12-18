@@ -21,5 +21,22 @@
     </div>
     <div class="col-md-8" id="petshop_map"></div>
   </div>
+  <div class="form-group">
+    <h1>Comment Section</h1></div>
+    <div class="row form-group">
+    <textarea id="comment" class="form-control" type="text" placeholder="Leave a comment and Rating" [(ngModel)]="comment" name="comment"></textarea>
+      <app-custombutton  (click)="addComment()" [matTooltipShown]="buttonDisabled" [matTooltipMsg]='errorMsg'></app-custombutton>
   </div>
+    <h1>All comments</h1>
+  <div *ngFor="let c of allCommentsFinal">
+        <div class="row">
+          <div class="col">
+            <h3>Comment: {{c.Comment}}</h3>
+            <h3>Commented by: {{c.User.Username}}</h3>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
 
