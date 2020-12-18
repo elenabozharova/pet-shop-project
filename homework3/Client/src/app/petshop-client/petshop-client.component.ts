@@ -3,6 +3,7 @@ import { Petshop } from '../shared/petshop.model';
 import { PetshopsService } from './../shared/petshops.service';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-petshop-client',
@@ -19,16 +20,19 @@ export class PetshopClientComponent implements OnInit {
   displayedColumns: string[] = ['Title', 'Address', 'Rating'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource: MatTableDataSource<Petshop>;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private service: PetshopsService) {
   }
 
   ngOnInit(): void {
     this.service.getPetshops().then(
-      res => {
+     res => {
         this.petshopList = res as Petshop[];
         this.dataSource = new MatTableDataSource(this.petshopList);
         this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+        console.log(this.petshopList);
     }
     );
   }
@@ -43,16 +47,10 @@ export class PetshopClientComponent implements OnInit {
     console.log(this.petShopsFiltered);
   }
 
-  sortByName(): void{
-    this.petshopsSorted = this.petshopList.sort();
-  }
-
-  sortByAddress(): void {
-
-  }
-
-  sortByRating(): void{
-
+  applyFilter(filterValue: string): void {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
 
 }
