@@ -4,10 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3ea5112bf32a4358bb91f653fc1d7a93" Name="Diagram1" ZoomLevel="79">
+      <Diagram DiagramId="af56d2cc517e4fca99c44d03bb0a914f" Name="Diagram1" ZoomLevel="79">
         <EntityTypeShape EntityType="Web_api.Models.Commented" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Web_api.Models.Petshop" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Web_api.Models.results_final" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Web_api.Models.User" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="Web_api.Models.fk_comment_petshop" ManuallyRouted="false" />
         <AssociationConnector Association="Web_api.Models.fk_comment_user" ManuallyRouted="false" />

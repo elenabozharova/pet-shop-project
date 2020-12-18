@@ -471,3 +471,11 @@ C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\obj
 C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\obj\Debug\Web api.csproj.CopyComplete
 C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\obj\Debug\Web api.dll
 C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\obj\Debug\Web api.pdb
+C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.Cors.dll
+C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.Host.HttpListener.dll
+C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.Hosting.dll
+C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.Cors.xml
+C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.Host.HttpListener.xml
+C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.Hosting.xml
+C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml

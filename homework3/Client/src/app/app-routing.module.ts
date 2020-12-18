@@ -4,6 +4,7 @@ import { HomeComponent } from './home-component/home-component.component';
 import { PetshopClientComponent } from './petshop-client/petshop-client.component';
 import { PetshopComponent } from './petshop/petshop.component';
 import { AuthenticationComponent } from './shared/authentication/authentication/authentication.component';
+import { RegisterComponent } from './shared/register/register.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
     component: AuthenticationComponent
   },
   {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }
@@ -30,6 +35,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)
 ],
+
 exports: [RouterModule]
 })
 export class AppRoutingModule { }

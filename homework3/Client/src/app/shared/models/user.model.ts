@@ -4,7 +4,7 @@ export class User{
   Id: number;
   Username: string;
   Pass: string;
-  Commenteds: Comment[];
+  Commenteds: any;
   Petshops: Petshop[];
 
   constructor(username: string, password: string){

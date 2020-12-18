@@ -37,32 +37,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="results_final">
-      <EntityTypeMapping TypeName="Web_api.Models.results_final">
-        <MappingFragment StoreEntitySet="results_final">
-          <ScalarProperty Name="title" ColumnName="title" />
-          <ScalarProperty Name="rating" ColumnName="rating" />
-          <ScalarProperty Name="reviewCount" ColumnName="reviewCount" />
-          <ScalarProperty Name="category" ColumnName="category" />
-          <ScalarProperty Name="attributes" ColumnName="attributes" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="plusCode" ColumnName="plusCode" />
-          <ScalarProperty Name="website" ColumnName="website" />
-          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
-          <ScalarProperty Name="saturday" ColumnName="saturday" />
-          <ScalarProperty Name="sunday" ColumnName="sunday" />
-          <ScalarProperty Name="monday" ColumnName="monday" />
-          <ScalarProperty Name="tuesday" ColumnName="tuesday" />
-          <ScalarProperty Name="wednesday" ColumnName="wednesday" />
-          <ScalarProperty Name="thursday" ColumnName="thursday" />
-          <ScalarProperty Name="friday" ColumnName="friday" />
-          <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
-          <ScalarProperty Name="isClaimed" ColumnName="isClaimed" />
-          <ScalarProperty Name="latitude" ColumnName="latitude" />
-          <ScalarProperty Name="longitude" ColumnName="longitude" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="Web_api.Models.User">
         <MappingFragment StoreEntitySet="Users">

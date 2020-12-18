@@ -43,32 +43,6 @@
     <Property Name="Latitude" Type="float" />
     <Property Name="Longitude" Type="float" />
   </EntityType>
-  <EntityType Name="results_final">
-    <Key>
-      <PropertyRef Name="title" />
-      <PropertyRef Name="plusCode" />
-    </Key>
-    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="rating" Type="nvarchar(max)" />
-    <Property Name="reviewCount" Type="nvarchar(max)" />
-    <Property Name="category" Type="nvarchar(max)" />
-    <Property Name="attributes" Type="nvarchar(max)" />
-    <Property Name="address" Type="nvarchar(max)" />
-    <Property Name="plusCode" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="website" Type="nvarchar(max)" />
-    <Property Name="phoneNumber" Type="nvarchar(max)" />
-    <Property Name="saturday" Type="nvarchar(max)" />
-    <Property Name="sunday" Type="nvarchar(max)" />
-    <Property Name="monday" Type="nvarchar(max)" />
-    <Property Name="tuesday" Type="nvarchar(max)" />
-    <Property Name="wednesday" Type="nvarchar(max)" />
-    <Property Name="thursday" Type="nvarchar(max)" />
-    <Property Name="friday" Type="nvarchar(max)" />
-    <Property Name="imgUrl" Type="nvarchar(max)" />
-    <Property Name="isClaimed" Type="nvarchar(max)" />
-    <Property Name="latitude" Type="nvarchar(max)" />
-    <Property Name="longitude" Type="nvarchar(max)" />
-  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="Id" />
@@ -129,7 +103,6 @@
     <EntitySet Name="Commented" EntityType="Self.Commented" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Favorite" EntityType="Self.Favorite" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Petshops" EntityType="Self.Petshops" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="results_final" EntityType="Self.results_final" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_comment_petshop" Association="Self.fk_comment_petshop">
       <End Role="Petshops" EntitySet="Petshops" />

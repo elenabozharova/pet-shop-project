@@ -39,32 +39,6 @@
     <NavigationProperty Name="Commenteds" Relationship="Self.fk_comment_petshop" FromRole="Petshops" ToRole="Commented" />
     <NavigationProperty Name="Users" Relationship="Self.Favorite" FromRole="Petshops" ToRole="Users" />
   </EntityType>
-  <EntityType Name="results_final">
-    <Key>
-      <PropertyRef Name="title" />
-      <PropertyRef Name="plusCode" />
-    </Key>
-    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="rating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="reviewCount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="attributes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="plusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="phoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="saturday" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="sunday" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="monday" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="tuesday" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="wednesday" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="thursday" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="friday" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="imgUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="isClaimed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="latitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="longitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
@@ -106,7 +80,6 @@
   <EntityContainer Name="DBModelPetshops" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Commenteds" EntityType="Self.Commented" />
     <EntitySet Name="Petshops" EntityType="Self.Petshop" />
-    <EntitySet Name="results_final" EntityType="Self.results_final" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <AssociationSet Name="fk_comment_petshop" Association="Self.fk_comment_petshop">
       <End Role="Petshops" EntitySet="Petshops" />

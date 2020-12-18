@@ -18,6 +18,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AuthenticationComponent } from './shared/authentication/authentication/authentication.component';
 import { RegisterComponent } from './shared/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { CustombuttonComponent } from './shared/custombutton/custombutton.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     PetshopComponent,
     StarComponent,
     AuthenticationComponent,
-    RegisterComponent
+    RegisterComponent,
+    CustombuttonComponent
   ],
   imports: [
   BrowserModule,

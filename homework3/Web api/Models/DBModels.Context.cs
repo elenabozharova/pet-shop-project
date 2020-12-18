@@ -27,7 +27,6 @@ namespace Web_api.Models
     
         public virtual DbSet<Commented> Commenteds { get; set; }
         public virtual DbSet<Petshop> Petshops { get; set; }
-        public virtual DbSet<results_final> results_final { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }
