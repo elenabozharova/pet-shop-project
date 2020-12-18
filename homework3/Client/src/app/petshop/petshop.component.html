@@ -2,7 +2,8 @@
 <div class="mapdiv container">
   <div class="row">
     <div class="col-md-4">
-      <h1>{{petshop?.Title}}</h1>
+
+      <h1>  <a [routerLink]="['/petshops']"><img class="arrow" src="../../assets/img/arrow-90deg-left.svg"></a> {{petshop?.Title}}</h1>
       <h3 *ngIf="petshop?.Address!=''">Located in: {{petshop?.Address}} </h3>
       <h2>Working hours:</h2>
       <ul>
@@ -20,6 +21,5 @@
     </div>
     <div class="col-md-8" id="petshop_map"></div>
   </div>
-</div>
-
+  </div>
 
