@@ -24,9 +24,9 @@ namespace Web_api.Controllers
 
         // GET: api/Commenteds/5
         [ResponseType(typeof(Commented))]
-        public IHttpActionResult GetCommented([FromUri]int id, [FromUri] int id_user)
+        public IHttpActionResult GetCommented(int id)
         {
-            Commented commented = db.Commenteds.Find(id, id_user);
+            Commented commented = db.Commenteds.Find(id);
             if (commented == null)
             {
                 return NotFound();
@@ -78,8 +78,7 @@ namespace Web_api.Controllers
             {
                 return BadRequest(ModelState);
             }
-            //commented.Petshop = db.Petshops.Find(commented.Id_petshop);
-            //commented.User = db.Users.Find(commented.Id_user);
+
             db.Commenteds.Add(commented);
 
             try

@@ -31,6 +31,10 @@ export class AuthenticationComponent implements OnInit {
       console.log(sessionStorage.getItem('user'));
       this.router.navigate(['/home']);
     });
-  }
+}
 
+
+logoutUser(): void{
+  sessionStorage.removeItem('user');
+}
 }

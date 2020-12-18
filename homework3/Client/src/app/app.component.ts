@@ -13,4 +13,9 @@ export class AppComponent implements OnInit {
     this.loggedInUser = sessionStorage.getItem('user');
   }
 
+  logoutUser(): void{
+    sessionStorage.removeItem('user');
+    window.location.href = 'home';
+  }
+
 }
