@@ -411,7 +411,6 @@ C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin
 C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.dll
 C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api\bin\Microsoft.Owin.Security.dll
