@@ -1,42 +1,59 @@
 
 <div class="mapdiv container">
   <div class="row">
-    <div class="col-md-4">
-
+    <div class="col-md-8">
       <h1>  <a [routerLink]="['/petshops']"><img class="arrow" src="../../assets/img/arrow-90deg-left.svg"></a> {{petshop?.Title}}</h1>
-      <h3 *ngIf="petshop?.Address!=''">Located in: {{petshop?.Address}} </h3>
+      <div  id="petshop_map"></div>
+    </div>
+    <div class="col-md-4">
+      <h3 *ngIf="petshop?.Address!=''">Located in:<br> {{petshop?.Address}} </h3>
       <h2>Working hours:</h2>
-      <ul>
-        <li>Monday: {{petshop?.MondayWorkingHours}}</li>
-        <li>Tuesday: {{petshop?.TuesdayWorkingHours}}</li>
-        <li>Wednesday: {{petshop?.WednesdayWorkingHours}}</li>
-        <li>Thursday: {{petshop?.ThursdayWorkingHours}}</li>
-        <li>Friday: {{petshop?.FridayWorkingHours}}</li>
-        <li>Saturday: {{petshop?.SaturdayWorkingHours}}</li>
-        <li>Sunday: {{petshop?.SundayWorkingHours}}</li>
-      </ul>
+        <ul class="week">
+          <li>Monday: {{petshop?.MondayWorkingHours}}</li>
+          <li>Tuesday: {{petshop?.TuesdayWorkingHours}}</li>
+          <li>Wednesday: {{petshop?.WednesdayWorkingHours}}</li>
+          <li>Thursday: {{petshop?.ThursdayWorkingHours}}</li>
+          <li>Friday: {{petshop?.FridayWorkingHours}}</li>
+          <li>Saturday: {{petshop?.SaturdayWorkingHours}}</li>
+          <li>Sunday: {{petshop?.SundayWorkingHours}}</li>
+        </ul>
       <div *ngIf="petshop?.Website">
-        <h2>Website: <a href="#" (click)="websiteClicked()" >{{petshop?.Website}}</a></h2>
+         <h2>Website: <a href="#" (click)="websiteClicked()" >{{petshop?.Website}}</a></h2>
+    </div>
+    <div>
+    </div>
+    <div *ngIf="allCommentsFinal.length!=0">
+      <h1>Comment Section</h1>
+      <h2>All comments</h2>
+      <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div *ngFor="let c of allCommentsFinal; let i=index">
+          <tr>
+            <th scope="row">{{i + 1}}</th>
+            <td scope="col">{{c.User.Username}}</td>
+            <td class="comment" scope="col">{{c.Comment}}</td>
+          </tr>
+        </div>
+      </tbody>
+      </table>
+  </div>
+  </div>
+  <div class="row newComment">
+    <div class="col-md-8">
+      <div class="form-group">
+        <h2>Haven't left a review already? You can do it here</h2>
+        <div class="row">
+          <textarea style="width:800px;" cols='20' class="form-control" type="text" placeholder="Leave a comment and Rating" [(ngModel)]="comment" name="comment"></textarea>
+        </div>
+        <div class="row">
+          <app-custombutton class="add-comment" (click)="addComment()" [matTooltipShown]="buttonDisabled" [matTooltipMsg]='errorMsg'></app-custombutton>
+        </div>
       </div>
     </div>
-    <div class="col-md-8" id="petshop_map"></div>
-  </div>
-  <div class="form-group">
-    <h1>Comment Section</h1></div>
-    <div class="row form-group">
-    <textarea id="comment" class="form-control" type="text" placeholder="Leave a comment and Rating" [(ngModel)]="comment" name="comment"></textarea>
-      <app-custombutton  (click)="addComment()" [matTooltipShown]="buttonDisabled" [matTooltipMsg]='errorMsg'></app-custombutton>
-  </div>
-    <h1>All comments</h1>
-  <div *ngFor="let c of allCommentsFinal">
-        <div class="row">
-          <div class="col">
-            <h3>Comment: {{c.Comment}}</h3>
-            <h3>Commented by: {{c.User.Username}}</h3>
-          </div>
-        </div>
-    </div>
-  </div>
-
-
-
+</div>

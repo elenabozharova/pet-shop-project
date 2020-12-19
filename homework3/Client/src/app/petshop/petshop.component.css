@@ -1,22 +1,73 @@
 #petshop_map {
-  height: 400px;
-  width: 100%;
-}
-.mapdiv {
-margin-top: 5%;
+  position: absolute;
+
+  width: 60%;
+  height: 60%;
+float: left;
+left: 20%;
+right: 10%;
+min-width: 800px;
+min-height: 620px;
+
 }
 
-li{
+.mapdiv {
+  margin-top: 5%;
+
+}
+h1{
+  left: 5%;
+}
+
+.row{
+  -webkit-background-composite: initial;
+  background-color: teal;
+  display: flex;
+  content: "";
+  display: table;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.col-md-4{
+  display: inline-flexbox;
+  margin: 10px;
+  float: right;
+  width: 50%;
+  padding: 10px;
+  left: 20%;
+  right: 10%;
+  background-color: skyblue;
   text-align: left;
 }
+.col-md-8{
+  margin: 10px;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
 
-h1,h2,h3 {
-  font-family: 'Courier New', Courier, monospace;
+  width: 960px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
 }
-.arrow{
-  widows: 100px;
-  align-items: left;
+.row{
+  font-family: "Dosis Semi Bold";
+
+  font-style: italic;
 }
-.form-control{
-  max-width: 200px;
+h1,h2,h3{
+  font-size: 250%;
+}
+
+.newComment {
+padding-left:5%;
+}
+
+
+.comment{
+  padding-left: 100%;
 }
