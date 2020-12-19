@@ -1,3 +1,10 @@
+td{
+  font-family: '	Bobby Jones Soft';
+}
+th{
+  font-family: '	Bobby Jones Soft';
+}
+
 .mat-column {
   text-align: right;
 }
@@ -34,4 +41,140 @@ img{
   color: black;
   font-size: large;
   text-align: center;font-weight: bold;
+}
+
+.container, .container-md, .container-sm {
+  width: 100%;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: 100%;
+  padding-right: 75px;
+  padding-left: 75px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.slika_div{
+  padding-top: 5px;
+  height: 110px;
+  width: 140px;
+}
+.slika{
+  height: 100px;
+  width: 140px;
+  border-radius: 10%;
+ 
+}
+
+.naslov_div{
+  font-size: 20px;
+  padding-top: 40px;
+  color: black;
+  font-weight: bold;
+}
+
+mat-table{
+  width:100%;
+  table-layout: fixed;
+  
+}
+.ng-star-inserted{
+  border: solid;
+}
+.tr.mat-row{
+  border: solid !important;
+}
+
+.cdk-header-row{
+}
+
+.address_container{
+  padding-bottom: 0px;
+}
+
+th{
+  padding: 0%;
+  text-align: center;
+  vertical-align: middle;
+  
+}
+
+td{
+  vertical-align: middle;
+  text-align: left;
+}
+
+.row{
+  width: 420px;
+}
+
+
+
+.address-td{
+  color: aquamarine;
+}
+
+.rating_tekst{
+  color: white;
+  size: 0px;
+}
+
+.mat-column-Address{
+  font-style: italic;
+}
+
+.zvezdi{
+  size: 40px;
+}
+
+th{
+  font-style: italic;
+}
+
+.mat-sort{
+  margin: auto;
+}
+
+.mat-form-field {
+  position: left;
+  margin-right: 0px;
+}
+
+.ng-star-inserted{
+  border: crimson;
+}
+
+.mat-elevation-z8{
+  background-color: white;
+}
+
+tr{
+  border: solid;
+}
+
+td{
+  border: solid;
+}
+
+.png_slika{
+  width: 80px;
+  height: 80px;
+  margin-left: -1120px;
+  margin-bottom: -200px;
+  transform: rotate(310deg);
+}
+
+.mat-form-field-hide-placeholder{
+  margin-right: -740px;
+}
+
+th{
+  background-color: rgb(255,87,87);
+ 
+}
+
+.mat-paginator{
+  text-align: center;
 }
