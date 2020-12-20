@@ -13,7 +13,7 @@ namespace Web_api
     {
         public static void Register(HttpConfiguration config)
         {
-            config.EnableCors(new EnableCorsAttribute("http://localhost:4200", headers: "*", methods: "*"));
+            config.EnableCors(new EnableCorsAttribute("https://findmeapetshop.netlify.app", headers: "*", methods: "*"));
 
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.

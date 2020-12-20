@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://localhost:44331/api'
+  apiURL: 'https://findmeapetshop.azurewebsites.net/api'
 };
 
 /*

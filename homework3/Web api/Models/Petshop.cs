@@ -12,14 +12,13 @@ namespace Web_api.Models
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-   // [JsonObject(IsReference = false)]
+    
     public partial class Petshop
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Petshop()
         {
             this.Commenteds = new HashSet<Commented>();
-            this.Users = new HashSet<User>();
         }
     
         public int Id { get; set; }
@@ -41,14 +40,11 @@ namespace Web_api.Models
         public string FridayWorkingHours { get; set; }
         public string ImgURL { get; set; }
         public bool IsClaimed { get; set; }
-        public Nullable<double> Latitude { get; set; }
+        public string Latitude { get; set; }
         public Nullable<double> Longitude { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         [JsonIgnore]
         public virtual ICollection<Commented> Commenteds { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-     
-        public virtual ICollection<User> Users { get; set; }
     }
 }
