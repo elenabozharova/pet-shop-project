@@ -21,7 +21,6 @@ export class RegisterComponent implements OnInit {
   registerUser(register: NgForm): void{
    this.service.registerUser(this.username, this.password );
    this.router.navigate(['login']);
-  // sessionStorage.setItem('loggedInUser', this.user.Username);
   }
 
 }

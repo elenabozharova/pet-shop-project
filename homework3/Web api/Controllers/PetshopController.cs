@@ -14,6 +14,7 @@ using Web_api.Models;
 
 namespace Web_api.Controllers
 {
+    [EnableCors("*","*","*")]
     public class PetshopController : ApiController
     {
         private DBModelPetshops db = new DBModelPetshops();

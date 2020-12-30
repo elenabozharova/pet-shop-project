@@ -15,7 +15,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 
 import { AgmCoreModule } from '@agm/core';
-import { AuthenticationComponent } from './shared/authentication/authentication/authentication.component';
+import { LoginComponent } from './shared/authentication/authentication/login.component';
 import { RegisterComponent } from './shared/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { CustombuttonComponent } from './shared/custombutton/custombutton.component';
@@ -27,7 +27,7 @@ import { CustombuttonComponent } from './shared/custombutton/custombutton.compon
     HomeComponent,
     PetshopComponent,
     StarComponent,
-    AuthenticationComponent,
+    LoginComponent,
     RegisterComponent,
     CustombuttonComponent
   ],

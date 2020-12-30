@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home-component/home-component.component';
 import { PetshopClientComponent } from './petshop-client/petshop-client.component';
 import { PetshopComponent } from './petshop/petshop.component';
-import { AuthenticationComponent } from './shared/authentication/authentication/authentication.component';
+import { LoginComponent } from './shared/authentication/authentication/login.component';
 import { RegisterComponent } from './shared/register/register.component';
 
 const routes: Routes = [
@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: AuthenticationComponent
+    component: LoginComponent
   },
   {
     path: 'register',

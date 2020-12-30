@@ -40,7 +40,7 @@ namespace Web_api.Models
         public string FridayWorkingHours { get; set; }
         public string ImgURL { get; set; }
         public bool IsClaimed { get; set; }
-        public string Latitude { get; set; }
+        public Nullable<double> Latitude { get; set; }
         public Nullable<double> Longitude { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

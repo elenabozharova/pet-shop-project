@@ -45,6 +45,7 @@ export class PetshopsService {
   loginUser(): any{
     return this.http.get(environment.apiURL + '/Users').toPromise();
   }
+
   getUser(id: number): Observable<any> {
     return this.http.get(environment.apiURL + '/Users/' + id);
   }

@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PetshopsService } from '../../petshops.service';
-import { User } from './../../models/user.model';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-authentication',
-  templateUrl: './authentication.component.html',
-  styleUrls: ['./authentication.component.css']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class AuthenticationComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   user: User;
   username = '';
   password = '';
   users: User[];
   loggedInUser: User;
+  notFound = false;
   constructor(private service: PetshopsService, private router: Router) { }
 
   ngOnInit(): void {
@@ -25,10 +26,11 @@ export class AuthenticationComponent implements OnInit {
       this.users = res;
       // tslint:disable-next-line: triple-equals
       this.loggedInUser = this.users.find(x => x.Username == this.username);
-      console.log('Log');
-      console.log(this.loggedInUser);
+      if (this.loggedInUser == null){
+        this.notFound = true;
+        this.router.navigate(['/login']);
+      }
       sessionStorage.setItem('user', this.loggedInUser.Username);
-      console.log(sessionStorage.getItem('user'));
       this.router.navigate(['/home']);
     });
   }

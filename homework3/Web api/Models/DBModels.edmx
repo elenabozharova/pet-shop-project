@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Web_api.Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Web_api.Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Commented">
           <Key>
             <PropertyRef Name="Id_user" />
@@ -37,7 +37,7 @@
           <Property Name="FridayWorkingHours" Type="varchar" MaxLength="50" />
           <Property Name="ImgURL" Type="varchar" MaxLength="500" />
           <Property Name="IsClaimed" Type="bit" Nullable="false" />
-          <Property Name="Latitude" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Latitude" Type="float" />
           <Property Name="Longitude" Type="float" />
         </EntityType>
         <EntityType Name="Users">
@@ -124,7 +124,7 @@
           <Property Name="FridayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ImgURL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="IsClaimed" Type="Boolean" Nullable="false" />
-          <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Latitude" Type="Double" />
           <Property Name="Longitude" Type="Double" />
           <NavigationProperty Name="Commenteds" Relationship="Self.fk_comment_petshop" FromRole="Petshops" ToRole="Commented" />
         </EntityType>
