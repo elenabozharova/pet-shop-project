@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Web_api.Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Commented">
+    <Key>
+      <PropertyRef Name="Id_user" />
+      <PropertyRef Name="Id_petshop" />
+    </Key>
+    <Property Name="Id_user" Type="int" Nullable="false" />
+    <Property Name="Id_petshop" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Petshops">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="Rating" Type="float" />
+    <Property Name="ReviewCount" Type="int" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Attributes" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+    <Property Name="PlusCode" Type="varchar" MaxLength="50" />
+    <Property Name="Website" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="SaturdayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="SundayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="MondayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="TuesdayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="WednesdayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="ThursdayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="FridayWorkingHours" Type="varchar" MaxLength="50" />
+    <Property Name="ImgURL" Type="varchar" MaxLength="500" />
+    <Property Name="IsClaimed" Type="bit" Nullable="false" />
+    <Property Name="Latitude" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Longitude" Type="float" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Pass" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_comment_petshop">
+    <End Role="Petshops" Type="Self.Petshops" Multiplicity="1" />
+    <End Role="Commented" Type="Self.Commented" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Petshops">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Commented">
+        <PropertyRef Name="Id_petshop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_comment_user">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Commented" Type="Self.Commented" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Commented">
+        <PropertyRef Name="Id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Web_apiModelsStoreContainer">
+    <EntitySet Name="Commented" EntityType="Self.Commented" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Petshops" EntityType="Self.Petshops" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_comment_petshop" Association="Self.fk_comment_petshop">
+      <End Role="Petshops" EntitySet="Petshops" />
+      <End Role="Commented" EntitySet="Commented" />
+    </AssociationSet>
+    <AssociationSet Name="fk_comment_user" Association="Self.fk_comment_user">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Commented" EntitySet="Commented" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

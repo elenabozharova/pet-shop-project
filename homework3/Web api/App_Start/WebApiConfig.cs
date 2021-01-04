@@ -13,7 +13,8 @@ namespace Web_api
     {
         public static void Register(HttpConfiguration config)
         {
-            config.EnableCors(new EnableCorsAttribute("http://localhost:4200", headers: "*", methods: "*"));
+           // config.EnableCors(new EnableCorsAttribute("https://findmeapetshop.netlify.app", headers: "*", methods: "*"));
+            config.EnableCors(new EnableCorsAttribute("https://localhost:4200", headers: "*", methods: "*"));
 
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
@@ -28,6 +29,13 @@ namespace Web_api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var json = config.Formatters.JsonFormatter;
+             json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            // json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
+            //GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
+
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
 }

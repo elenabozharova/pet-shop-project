@@ -9,11 +9,18 @@
 
 namespace Web_api.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
     public partial class Petshop
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Petshop()
+        {
+            this.Commenteds = new HashSet<Commented>();
+        }
+    
         public int Id { get; set; }
         public string Title { get; set; }
         public Nullable<double> Rating { get; set; }
@@ -35,5 +42,9 @@ namespace Web_api.Models
         public bool IsClaimed { get; set; }
         public Nullable<double> Latitude { get; set; }
         public Nullable<double> Longitude { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
+        public virtual ICollection<Commented> Commenteds { get; set; }
     }
 }

@@ -12,11 +12,29 @@
       <li class="nav-item">
         <a class="nav-link" href="/petshops">All Petshops</a>
       </li>
+      <div *ngIf="loggedInUser">
+        <li class=" loggedinuser nav-item">
+          Logged in as: {{loggedInUser}}
+        </li>
+        <li>
+          <button  class=" loggedinuser nav-item" (click)="logoutUser()">Logout</button>
+        </li>
+      </div>
+      <div *ngIf="!loggedInUser">
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </div>
+      <div *ngIf="!loggedInUser">
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Register</a>
+      </li>
+      </div>
     </ul>
   </div>
 </nav>
-<div class="background">
+
   <div class="text-center">
       <router-outlet></router-outlet>
   </div>
-</div>
+

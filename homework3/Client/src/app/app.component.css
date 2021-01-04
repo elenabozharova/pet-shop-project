@@ -16,3 +16,10 @@
   font-weight: bolder;
   font-size: 18px;
 }
+
+.loggedinuser{
+  color: rgb(217, 230, 224);
+  font-weight: bolder;
+  font-size: 18px;
+  margin-top: 8px;
+}
