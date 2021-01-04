@@ -19,6 +19,7 @@ namespace Web_api.Models
         public Petshop()
         {
             this.Commenteds = new HashSet<Commented>();
+            this.Users = new HashSet<User>();
         }
     
         public int Id { get; set; }
@@ -46,5 +47,7 @@ namespace Web_api.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         [JsonIgnore]
         public virtual ICollection<Commented> Commenteds { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

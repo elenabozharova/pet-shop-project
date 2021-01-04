@@ -37,6 +37,7 @@
     <Property Name="Latitude" Type="Double" />
     <Property Name="Longitude" Type="Double" />
     <NavigationProperty Name="Commenteds" Relationship="Self.fk_comment_petshop" FromRole="Petshops" ToRole="Commented" />
+    <NavigationProperty Name="Users" Relationship="Self.Favorite" FromRole="Petshops" ToRole="Users" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -46,6 +47,7 @@
     <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Pass" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Commenteds" Relationship="Self.fk_comment_user" FromRole="Users" ToRole="Commented" />
+    <NavigationProperty Name="Petshops" Relationship="Self.Favorite" FromRole="Users" ToRole="Petshops" />
   </EntityType>
   <Association Name="fk_comment_petshop">
     <End Role="Petshops" Type="Self.Petshop" Multiplicity="1" />
@@ -71,6 +73,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Favorite">
+    <End Role="Petshops" Type="Self.Petshop" Multiplicity="*" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+  </Association>
   <EntityContainer Name="DBModelPetshops" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Commenteds" EntityType="Self.Commented" />
     <EntitySet Name="Petshops" EntityType="Self.Petshop" />
@@ -82,6 +88,10 @@
     <AssociationSet Name="fk_comment_user" Association="Self.fk_comment_user">
       <End Role="Users" EntitySet="Users" />
       <End Role="Commented" EntitySet="Commenteds" />
+    </AssociationSet>
+    <AssociationSet Name="Favorite" Association="Self.Favorite">
+      <End Role="Petshops" EntitySet="Petshops" />
+      <End Role="Users" EntitySet="Users" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
