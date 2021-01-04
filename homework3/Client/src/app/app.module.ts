@@ -21,6 +21,7 @@ import {ModelResolver} from './shared/models/pethop-details-model.resover';
 import {PetshopCommentsResolver} from './shared/models/petshop-comments-model.resolver';
 import {UsersResolver} from './shared/models/users-resolver-model';
 import { PetshopListResolver} from './shared/models/pethsop-list-model.resolver';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PetshopListResolver} from './shared/models/pethsop-list-model.resolver'
     StarComponent,
     LoginComponent,
     RegisterComponent,
-    CustombuttonComponent
+    CustombuttonComponent,
+    NavbarComponent
   ],
   imports: [
   BrowserModule,
