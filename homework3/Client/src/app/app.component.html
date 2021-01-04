@@ -16,6 +16,9 @@
         <li class=" loggedinuser nav-item">
           Logged in as: {{loggedInUser}}
         </li>
+        <li>
+          <button  class=" loggedinuser nav-item" (click)="logoutUser()">Logout</button>
+        </li>
       </div>
       <div *ngIf="!loggedInUser">
         <li class="nav-item">

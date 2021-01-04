@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PetshopClientComponent } from './petshop-client.component';
+import { PetshopListComponent } from './petshop-list.component';
 
-describe('PetshopClientComponent', () => {
-  let component: PetshopClientComponent;
-  let fixture: ComponentFixture<PetshopClientComponent>;
+describe('PetshopListComponent', () => {
+  let component: PetshopListComponent;
+  let fixture: ComponentFixture<PetshopListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PetshopClientComponent ]
+      declarations: [ PetshopListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PetshopClientComponent);
+    fixture = TestBed.createComponent(PetshopListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

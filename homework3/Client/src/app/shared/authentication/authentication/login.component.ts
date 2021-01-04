@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
         this.notFound = true;
         this.router.navigate(['/login']);
       }
-      sessionStorage.setItem('user', this.loggedInUser.Username);
+      sessionStorage.setItem('username', this.loggedInUser.Username);
+      sessionStorage.setItem('currentUserId', this.loggedInUser.Id.toString());
       this.router.navigate(['/home']);
     });
   }

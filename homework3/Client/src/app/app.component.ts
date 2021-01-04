@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PetshopsService } from './shared/petshops.service';
+import { LoginService} from './shared/login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   loggedInUser: string;
-  title = 'Client';
+  title = 'FindMeAPetshop';
+
+  constructor(private service: LoginService){
+  }
 
   ngOnInit(): void {
-    this.loggedInUser = sessionStorage.getItem('user');
+    this.loggedInUser = sessionStorage.getItem('username');
+  }
+
+  logoutUser(): void{
+    this.service.logoutUser();
   }
 
 }

@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>Register in</h1>
+  <h1>Register</h1>
   <form #registerForm>
-  Username: <input type="text" placeholder="username"  [(ngModel)]="username"  name="username"> <br>
-  Password: <input type="password" placeholder="password"  [(ngModel)]="password"  name="password"> <hr>
+  <input class="form-control" type="text" placeholder="username"  [(ngModel)]="username"  name="username"> <br>
+  <input class="form-control" type="password" placeholder="password"  [(ngModel)]="password"  name="password"> <hr>
   <button class="btn btn-primary" (click)="registerUser(registerForm.value)">Register</button>
   </form>
   </div>

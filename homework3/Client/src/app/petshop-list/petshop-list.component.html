@@ -1,11 +1,8 @@
-<!--<img src="https://bethhaven.com/home/wp-content/uploads/2013/10/red-paw-png.png" class="png_slika">-->
-<!--<h2 *ngIf="petshopList">List of Petshops in Skopje</h2>-->
 <div class="container mat-elevation-z8">
-
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
   </mat-form-field>
-<mat-table matSort [dataSource]="dataSource" >
+<mat-table matSort *ngIf="dataFetched" [dataSource]="dataSource" >
  <!-- Title Column -->
  <ng-container matColumnDef="Title" >
 <th mat-header-cell *matHeaderCellDef mat-sort-header style="border-bottom: solid 0.5px rgb(166, 189, 172);"> TITLE: </th>
