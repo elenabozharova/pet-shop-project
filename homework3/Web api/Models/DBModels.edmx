@@ -14,6 +14,14 @@
           <Property Name="Id_petshop" Type="int" Nullable="false" />
           <Property Name="Comment" Type="varchar" MaxLength="300" Nullable="false" />
         </EntityType>
+        <EntityType Name="Favorite">
+          <Key>
+            <PropertyRef Name="Id_user" />
+            <PropertyRef Name="Id_petshop" />
+          </Key>
+          <Property Name="Id_user" Type="int" Nullable="false" />
+          <Property Name="Id_petshop" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Petshops">
           <Key>
             <PropertyRef Name="Id" />
@@ -72,8 +80,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_favorite_petshop">
+          <End Role="Petshops" Type="Self.Petshops" Multiplicity="1" />
+          <End Role="Favorite" Type="Self.Favorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Petshops">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Favorite">
+              <PropertyRef Name="Id_petshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_favorite_user">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Favorite" Type="Self.Favorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Favorite">
+              <PropertyRef Name="Id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Web_apiModelsStoreContainer">
           <EntitySet Name="Commented" EntityType="Self.Commented" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Favorite" EntityType="Self.Favorite" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Petshops" EntityType="Self.Petshops" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="fk_comment_petshop" Association="Self.fk_comment_petshop">
@@ -83,6 +116,14 @@
           <AssociationSet Name="fk_comment_user" Association="Self.fk_comment_user">
             <End Role="Users" EntitySet="Users" />
             <End Role="Commented" EntitySet="Commented" />
+          </AssociationSet>
+          <AssociationSet Name="fk_favorite_petshop" Association="Self.fk_favorite_petshop">
+            <End Role="Petshops" EntitySet="Petshops" />
+            <End Role="Favorite" EntitySet="Favorite" />
+          </AssociationSet>
+          <AssociationSet Name="fk_favorite_user" Association="Self.fk_favorite_user">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Favorite" EntitySet="Favorite" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -127,6 +168,7 @@
           <Property Name="Latitude" Type="Double" />
           <Property Name="Longitude" Type="Double" />
           <NavigationProperty Name="Commenteds" Relationship="Self.fk_comment_petshop" FromRole="Petshops" ToRole="Commented" />
+          <NavigationProperty Name="Users" Relationship="Self.Favorite" FromRole="Petshops" ToRole="Users" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -136,6 +178,7 @@
           <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Pass" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Commenteds" Relationship="Self.fk_comment_user" FromRole="Users" ToRole="Commented" />
+          <NavigationProperty Name="Petshops" Relationship="Self.Favorite" FromRole="Users" ToRole="Petshops" />
         </EntityType>
         <Association Name="fk_comment_petshop">
           <End Role="Petshops" Type="Self.Petshop" Multiplicity="1" />
@@ -161,6 +204,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Favorite">
+          <End Role="Petshops" Type="Self.Petshop" Multiplicity="*" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+        </Association>
         <EntityContainer Name="DBModelPetshops" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Commenteds" EntityType="Self.Commented" />
           <EntitySet Name="Petshops" EntityType="Self.Petshop" />
@@ -172,6 +219,10 @@
           <AssociationSet Name="fk_comment_user" Association="Self.fk_comment_user">
             <End Role="Users" EntitySet="Users" />
             <End Role="Commented" EntitySet="Commenteds" />
+          </AssociationSet>
+          <AssociationSet Name="Favorite" Association="Self.Favorite">
+            <End Role="Petshops" EntitySet="Petshops" />
+            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -225,6 +276,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="Favorite" TypeName="Web_api.Models.Favorite" StoreEntitySet="Favorite">
+            <EndProperty Name="Petshops">
+              <ScalarProperty Name="Id" ColumnName="Id_petshop" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="Id" ColumnName="Id_user" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
