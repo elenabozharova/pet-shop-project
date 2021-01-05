@@ -22,6 +22,7 @@ import {PetshopCommentsResolver} from './shared/models/petshop-comments-model.re
 import {UsersResolver} from './shared/models/users-resolver-model';
 import { PetshopListResolver} from './shared/models/pethsop-list-model.resolver';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     LoginComponent,
     RegisterComponent,
     CustombuttonComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
   BrowserModule,
