@@ -8,13 +8,13 @@
   }
   
   .bottomText{
-    position: absolute;
+    position: relative;
     color: rgb(217, 230, 224);
     font-family: "Dosis Semi Bold";
     font-size: 16px;
     font-weight: normal;
     font-style: italic;
     top:18%;
-    left:20%;
-    right:20%;
+    left:34%;
+    right:34%;
   }
