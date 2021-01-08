@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+ // apiURL: 'https://findmeapetshop.azurewebsites.net/api' // connection string to remote server
   apiURL: 'https://localhost:44331/api'
 };
 
