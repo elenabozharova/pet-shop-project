@@ -46,13 +46,13 @@ export class PetshopComponent implements OnInit {
 
     this.data = this.route.snapshot.data;
     this.initializeMap();
-    this.commentsForPetshop = this.data.comments.filter(x => x.Id_petshop === this.petshopId );
-    this.commentsForPetshop.forEach(x => {
-      if (x.Id_user === +sessionStorage.getItem('currentUserId')){
-        this.buttonDisabled = true;
-        this.errorMsg = 'You have already left a review';
-      }
-    });
+   // this.commentsForPetshop = this.data.comments.filter(x => x.Id_petshop === this.petshopId );
+   // this.commentsForPetshop.forEach(x => {
+    //  if (x.Id_user === +sessionStorage.getItem('currentUserId')){
+     //   this.buttonDisabled = true;
+     //   this.errorMsg = 'You have already left a review';
+      //}
+   // });
   }
 
   initializeMap(): void {
