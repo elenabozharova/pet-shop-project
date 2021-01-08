@@ -15,7 +15,7 @@ img{
   left: 600px;
   width: 50%;
   height: 50%;
-  
+
 }
 
 #btn{
@@ -35,8 +35,9 @@ img{
   bottom: 0px;
   height: 60px;
   background-color:  rgb(24, 41, 48) ;
-  
+
 }
+
 .bottomText{
   position: absolute;
   color: rgb(217, 230, 224);

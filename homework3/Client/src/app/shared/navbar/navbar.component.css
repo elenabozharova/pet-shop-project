@@ -1,0 +1,22 @@
+
+.navbar {
+    background-color: rgb(24, 41, 48) !important;
+  }
+  
+  .nav-item, .nav-item active{
+    margin-left:50px;
+    font-family: "Dosis Semi Bold";
+  }
+  .nav-item .nav-link, .nav-item active .nav-link{
+    color: rgb(217, 230, 224);
+    font-weight: bolder;
+    font-size: 18px;
+  }
+  
+  .loggedinuser{
+    color: rgb(217, 230, 224);
+    font-weight: bolder;
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  

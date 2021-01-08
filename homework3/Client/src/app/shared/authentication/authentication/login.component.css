@@ -1,0 +1,17 @@
+
+img{
+z-index: -100;
+position: absolute;
+left: 0%;
+right:0%;
+width: 100%;
+}
+.log-in{
+z-index:5;
+position: relative;
+}
+.form-control{
+  max-width: 600px;
+  text-align: center;
+  margin-left: 30%;
+}

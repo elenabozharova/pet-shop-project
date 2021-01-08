@@ -1,0 +1,61 @@
+<div class="container mat-elevation-z8">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+  </mat-form-field>
+<mat-table matSort *ngIf="dataFetched" [dataSource]="dataSource" >
+ <!-- Title Column -->
+ <ng-container matColumnDef="Title" >
+<th mat-header-cell *matHeaderCellDef mat-sort-header style="border-bottom: solid 0.5px rgb(166, 189, 172);"> TITLE: </th>
+  <td mat-cell *matCellDef="let element; let i = index" style="border-bottom: solid 0.5px rgb(166, 189, 172);"><a [routerLink]="['/petshop/details', element.Id]" routerLinkActive="router-link-active" >
+  <div class="row" id="row_id">
+    <div class="col-md-5">
+    <div class="slika_div">
+      <img *ngIf="element.ImgUrl!='' && element.ImgURL!=null" [src]="element.ImgURL" onError="this.src='../../assets/img/petshop1.jpg' " class="slika"/>
+      <img *ngIf="!element.ImgURL && i%2 ==0" src="../../assets/img/petshop1.jpg" class="slika"/>
+      <img *ngIf="!element.ImgURL && i%2 !=0" src="../../assets/img/petshop2.png" class="slika"/>
+    </div>
+   </div>
+    <div class="col-md-6">
+    <div class="naslov_div">
+      {{element.Title}}
+    </div>
+   </div>
+ </div>
+  </a>
+</td>
+  </ng-container>
+
+<!-- Address Column -->
+<ng-container matColumnDef="Address" >
+  <th mat-header-cell *matHeaderCellDef mat-sort-header style="border-bottom: solid 0.5px rgb(166, 189, 172);"> ADDRESS: </th>
+
+  <td mat-cell *matCellDef="let element" style="border-bottom: solid 0.5px rgb(166, 189, 172);" >{{element.Address}} </td>
+
+</ng-container>
+
+<!-- Rating Column -->
+<ng-container matColumnDef="Rating">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header style="border-bottom: solid 0.5px rgb(166, 189, 172);">RATING:</th>
+  <td mat-cell *matCellDef="let element" class="proba" style="border-bottom: solid 0.5px rgb(166, 189, 172);">
+      <div class="rating_tekst">{{element.Rating}}</div>
+      <div class="col-md-4">
+        <div class='col-md-8'>
+          <div class="zvezdi">
+            <app-star [rating]="element.Rating"></app-star>
+          </div>
+        </div>
+      </div>
+
+  </td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns" style="border: solid;"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;" style="border: solid;"></tr>
+
+</mat-table>
+<mat-paginator [pageSizeOptions]="[10,20,30]" showFirstLastButtons>
+
+</mat-paginator>
+
+</div>
+

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  footerMsg = 'Try our app and find out the existing Petshops in Skopje with a rating higher than two.';
   constructor() { }
 
   ngOnInit(): void {
