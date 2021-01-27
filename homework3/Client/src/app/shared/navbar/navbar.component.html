@@ -3,33 +3,34 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/petshops">All Petshops</a>
         </li>
-        <div *ngIf="loggedInUser">
-          <li class=" loggedinuser nav-item">
+        <div class="loggedInUser loggedIn" [hidden]="!loggedInUser">
+          <li class="nav-item">
             Logged in as: {{loggedInUser}}
           </li>
+        </div>
+        <div class="loggedInUser" [hidden]="!loggedInUser">
           <li>
-            <button  class=" loggedinuser nav-item" (click)="logoutUser()">Logout</button>
+            <button class="btn btn-dark loggedInUser nav-item" (click)="logoutUser()">Logout</button>
           </li>
         </div>
         <div *ngIf="!loggedInUser">
           <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/login">Log In</a>
           </li>
         </div>
         <div *ngIf="!loggedInUser">
-        <li class="nav-item">
-          <a class="nav-link" href="/register">Register</a>
-        </li>
+          <li class="nav-item">
+           <a class="nav-link" href="/register">Register</a>
+          </li>
         </div>
       </ul>
     </div>
-  </nav>
+</nav>

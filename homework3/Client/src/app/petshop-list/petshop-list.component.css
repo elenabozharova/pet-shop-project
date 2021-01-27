@@ -53,7 +53,6 @@ img{
   padding-left: 75px;
   margin-right: auto;
   margin-left: auto;
-
 }
 
 .slika_div{
@@ -61,6 +60,7 @@ img{
   height: 110px;
   width: 140px;
 }
+
 .slika{
   height: 100px;
   width: 140px;
@@ -80,9 +80,11 @@ mat-table{
   table-layout: fixed;
 
 }
+
 .ng-star-inserted{
   border: solid;
 }
+
 .tr.mat-row{
   border: solid !important;
 }
@@ -106,8 +108,6 @@ td{
 .row{
   width: 420px;
 }
-
-
 
 .address-td{
   color: aquamarine;

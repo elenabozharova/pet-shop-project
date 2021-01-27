@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+/**
+ * the main component in the application
+ * Inside all other components are shown by routing
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,12 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'FindMeAPetshop';
-
-  constructor(){
+  username;
+  constructor(private router: Router){
   }
 
   ngOnInit(): void {
-
+   this.username = sessionStorage.getItem('username');
   }
 
 }

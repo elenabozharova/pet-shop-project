@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path : 'petshops',
     component : PetshopListComponent,
-    resolve: { petshops: PetshopListResolver}},
+    resolve: { petshops: PetshopListResolver
+              }},
   {
     path: 'home',
     component: HomeComponent
@@ -24,7 +25,8 @@ const routes: Routes = [
     component: PetshopComponent,
     resolve: {petshop: ModelResolver,
               comments: PetshopCommentsResolver,
-              users : UsersResolver}
+              users : UsersResolver
+            }
   },
   {
     path: 'login',
@@ -34,10 +36,10 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
-  {
-    path: '**',
-    redirectTo: 'home'
-  }
+ {
+   path: '**',
+   redirectTo: 'home'
+ }
 ];
 
 @NgModule({

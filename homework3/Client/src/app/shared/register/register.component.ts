@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
-import { PetshopsService } from '../petshops.service';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { UsersService } from '../services/login/login.service';
+/**
+ * this component is used for the regster view.
+ * the user simply provides a password and a username and is redirected to the login view.
+ */
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,13 +13,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private service: PetshopsService, private router: Router) { }
+  constructor(private service: UsersService, private router: Router) { }
   user: User;
   username = '';
   password = '';
   ngOnInit(): void {
   }
-  registerUser(register: NgForm): void{
+
+  registerUser(): void{
    this.service.registerUser(this.username, this.password );
    this.router.navigate(['login']);
   }

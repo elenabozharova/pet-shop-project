@@ -1,25 +1,24 @@
 #petshop_map {
   position: absolute;
-
   width: 60%;
   height: 60%;
-float: left;
-left: 20%;
-right: 10%;
-min-width: 800px;
-min-height: 620px;
-
+  float: left;
+  left: 20%;
+  right: 10%;
+  min-width: 800px;
+  min-height: 620px;
 }
 
 .mapdiv {
   margin-top: 5%;
 
 }
-h1{
+
+h1 {
   left: 5%;
 }
 
-.row{
+.row {
   -webkit-background-composite: initial;
   background-color: teal;
   display: flex;
@@ -28,8 +27,8 @@ h1{
   clear: both;
   margin-left: auto;
   margin-right: auto;
-
 }
+
 .col-md-4{
   display: inline-flexbox;
   margin: 10px;
@@ -41,6 +40,7 @@ h1{
   background-color: skyblue;
   text-align: left;
 }
+
 .col-md-8{
   margin: 10px;
   float: left;
@@ -48,26 +48,39 @@ h1{
   padding: 10px;
   margin-right: auto; /* 1 */
   margin-left:  auto; /* 1 */
-
   width: 960px; /* 2 */
-
   padding-right: 10px; /* 3 */
   padding-left:  10px; /* 3 */
 }
+
 .row{
   font-family: "Dosis Semi Bold";
-
   font-style: italic;
 }
+
 h1,h2,h3{
   font-size: 250%;
 }
 
-.newComment {
-padding-left:5%;
+tr th:first-child{
+  max-width: 1px;
 }
 
+table th{
+text-align: left;
+float: left;
+max-width: 500px;
+}
 
-.comment{
-  padding-left: 100%;
+table td {
+  width: 500px;
+}
+
+table {
+margin-right: 0%;
+}
+
+.table {
+  width: 80% !important;
+  padding-right: 0% !important;
 }

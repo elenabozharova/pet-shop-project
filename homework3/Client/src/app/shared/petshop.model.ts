@@ -1,7 +1,7 @@
 export class Petshop {
         public Id: number;
         public Title: string;
-        public Rating?: number;
+        public Rating: number;
         public ReviewCount?: number;
         public Category: string;
         public Attributes: string;

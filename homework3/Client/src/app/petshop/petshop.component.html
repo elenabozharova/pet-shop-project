@@ -2,8 +2,9 @@
 <div class="mapdiv container">
   <div class="row">
     <div class="col-md-8">
-      <h1>  <a [routerLink]="['/petshops']"><img class="arrow" src="../../assets/img/arrow-90deg-left.svg"></a> {{data.petshop?.Title}}</h1>
-      <div  id="petshop_map"></div>
+      <h1><a [routerLink]="['/petshops']"><img class="arrow" src="../../assets/img/arrow-90deg-left.svg">
+      </a> {{data.petshop?.Title}}</h1>
+      <div id="petshop_map"></div>
     </div>
     <div class="col-md-4">
       <h3 *ngIf="data.petshop?.Address!=''">Located in:<br> {{data.petshop?.Address}} </h3>
@@ -18,7 +19,7 @@
           <li>Sunday: {{data.petshop?.SundayWorkingHours}}</li>
         </ul>
       <div *ngIf="data.petshop?.Website">
-         <h2>Website: <a href="#" (click)="websiteClicked()" >{{data.petshop?.Website}}</a></h2>
+         <h2>Website: <a href="http://{{data.petshop?.Website}}" >{{data.petshop?.Website}}</a></h2>
     </div>
     <div>
     </div>
@@ -28,6 +29,7 @@
       <table class="table table-dark">
         <thead>
         <tr>
+            <th scope="col"></th>
             <th scope="col">Username</th>
             <th scope="col">Comment</th>
         </tr>
@@ -35,9 +37,9 @@
       <tbody>
         <div *ngFor="let c of commentsForPetshop; let i=index">
           <tr>
-            <th scope="row">{{i + 1}}</th>
+            <th scope="col">{{i + 1}}</th>
             <td scope="col">{{c.User.Username}}</td>
-            <td class="comment" scope="col">{{c.Comment}}</td>
+            <td scope="col">{{c.Comment}}</td>
           </tr>
         </div>
       </tbody>

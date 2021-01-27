@@ -1,18 +1,13 @@
-import { Petshop } from './../petshop.model';
-import { User } from './user.model';
-
+/**
+ * the model that represents the Commented model in the api.
+ */
 export class Commented{
-  // tslint:disable-next-line: variable-name
-  Id_user: number;
-  // tslint:disable-next-line: variable-name
-  Id_petshop: number;
+  idUser: number;
+  idPetshop: number;
   Comment: string;
-  // Petshop: any;
-  // User: any;
-  // tslint:disable-next-line: variable-name
-  constructor(Id_user: number, Id_petshop: number, comment: string){
-    this.Id_user = Id_user;
-    this.Id_petshop = Id_petshop;
+  constructor(idUser: number, idPetshop: number, comment: string){
+    this.idUser = idUser;
+    this.idPetshop = idPetshop;
     this.Comment = comment;
   }
 }
