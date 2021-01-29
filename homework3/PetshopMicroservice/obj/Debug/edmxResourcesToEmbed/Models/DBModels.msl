@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Web_apiStoreContainer" CdmEntityContainer="DBModelPetshops">
+    <EntitySetMapping Name="Commenteds">
+      <EntityTypeMapping TypeName="Web_api.Commented">
+        <MappingFragment StoreEntitySet="Commented">
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+          <ScalarProperty Name="Id_petshop" ColumnName="Id_petshop" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Petshops">
+      <EntityTypeMapping TypeName="Web_api.Petshop">
+        <MappingFragment StoreEntitySet="Petshops">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="ReviewCount" ColumnName="ReviewCount" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Attributes" ColumnName="Attributes" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PlusCode" ColumnName="PlusCode" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SaturdayWorkingHours" ColumnName="SaturdayWorkingHours" />
+          <ScalarProperty Name="SundayWorkingHours" ColumnName="SundayWorkingHours" />
+          <ScalarProperty Name="MondayWorkingHours" ColumnName="MondayWorkingHours" />
+          <ScalarProperty Name="TuesdayWorkingHours" ColumnName="TuesdayWorkingHours" />
+          <ScalarProperty Name="WednesdayWorkingHours" ColumnName="WednesdayWorkingHours" />
+          <ScalarProperty Name="ThursdayWorkingHours" ColumnName="ThursdayWorkingHours" />
+          <ScalarProperty Name="FridayWorkingHours" ColumnName="FridayWorkingHours" />
+          <ScalarProperty Name="ImgURL" ColumnName="ImgURL" />
+          <ScalarProperty Name="IsClaimed" ColumnName="IsClaimed" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Web_api.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

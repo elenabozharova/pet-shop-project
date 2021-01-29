@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Web_api" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Commented">
+    <Key>
+      <PropertyRef Name="Id_user" />
+      <PropertyRef Name="Id_petshop" />
+    </Key>
+    <Property Name="Id_user" Type="Int32" Nullable="false" />
+    <Property Name="Id_petshop" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Petshop" Relationship="Self.fk_comment_petshop" FromRole="Commented" ToRole="Petshops" />
+    <NavigationProperty Name="User" Relationship="Self.fk_comment_user" FromRole="Commented" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Petshop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rating" Type="Double" />
+    <Property Name="ReviewCount" Type="Int32" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Attributes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PlusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SaturdayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SundayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MondayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TuesdayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WednesdayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ThursdayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FridayWorkingHours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImgURL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsClaimed" Type="Boolean" Nullable="false" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Longitude" Type="Double" />
+    <NavigationProperty Name="Commenteds" Relationship="Self.fk_comment_petshop" FromRole="Petshops" ToRole="Commented" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pass" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Commenteds" Relationship="Self.fk_comment_user" FromRole="Users" ToRole="Commented" />
+  </EntityType>
+  <Association Name="fk_comment_petshop">
+    <End Role="Petshops" Type="Self.Petshop" Multiplicity="1" />
+    <End Role="Commented" Type="Self.Commented" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Petshops">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Commented">
+        <PropertyRef Name="Id_petshop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_comment_user">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Commented" Type="Self.Commented" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Commented">
+        <PropertyRef Name="Id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBModelPetshops" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Commenteds" EntityType="Self.Commented" />
+    <EntitySet Name="Petshops" EntityType="Self.Petshop" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="fk_comment_petshop" Association="Self.fk_comment_petshop">
+      <End Role="Petshops" EntitySet="Petshops" />
+      <End Role="Commented" EntitySet="Commenteds" />
+    </AssociationSet>
+    <AssociationSet Name="fk_comment_user" Association="Self.fk_comment_user">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Commented" EntitySet="Commenteds" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
