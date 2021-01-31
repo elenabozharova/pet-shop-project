@@ -9,7 +9,6 @@
 
 namespace PetshopMicroservice.Models
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -40,11 +39,10 @@ namespace PetshopMicroservice.Models
         public string FridayWorkingHours { get; set; }
         public string ImgURL { get; set; }
         public bool IsClaimed { get; set; }
-        public Nullable<double> Latitude { get; set; }
+        public string Latitude { get; set; }
         public Nullable<double> Longitude { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Commented> Commenteds { get; set; }
     }
 }

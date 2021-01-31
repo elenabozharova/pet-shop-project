@@ -1,0 +1,10 @@
+services:
+  webapi:
+    build:
+      context: C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web
+        api
+      dockerfile: Dockerfile
+    image: webapi
+    ports:
+    - target: 80
+version: '3.4'

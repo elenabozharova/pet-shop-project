@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  webapi:
+    image: webapi:dev
+    container_name: webapi
+    build:
+      args:
+        source: obj/Docker/empty/
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "webapi"
+    volumes:
+      - C:\Users\Bozarova PC\Desktop\AngularFinal\pet-shop-project\homework3\Web api:C:\inetpub\wwwroot
+      - :C:\remote_debugger:ro
+    entrypoint: cmd /c "start /B C:\\ServiceMonitor.exe w3svc & C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646"
+

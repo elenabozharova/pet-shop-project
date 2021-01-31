@@ -10,7 +10,7 @@ import TileLayer from 'ol/layer/Tile';
 import Vector from 'ol/source/Vector';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
-import KML from 'ol/format/kml';
+import KML from 'ol/format/KML';
 /*
 The database is built in a way that every user can leave only one review per Petshop.
 If the user is not logged in, the custom button shows 'You must be logged in' message.

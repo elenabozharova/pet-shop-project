@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=&quot;|DataDirectory|\aspnet-Web api-20201207020736.mdf&quot;;Initial Catalog=&quot;aspnet-Web api-20201207020736&quot;;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Bozarova\ PC\\Desktop\\AngularFinal\\pet-shop-project\\homework3\\Web\ api\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="DBModelPetshops-Web.config Connection String" description="DBModelPetshops Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.DBModels.csdl|res://*/Models.DBModels.ssdl|res://*/Models.DBModels.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=ebozharova-sql.database.windows.net;initial catalog=my-sql-db;user id=elena.bozharova;password=5A&gt;yRMwzS::cLF}G;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Bozarova\ PC\\Desktop\\AngularFinal\\pet-shop-project\\homework3\\Web\ api\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DBModelPetshops']/@connectionString" />
+  </parameter>
+</parameters>

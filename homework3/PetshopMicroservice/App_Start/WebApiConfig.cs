@@ -12,6 +12,7 @@ namespace PetshopMicroservice
         {
             // Web API configuration and services
             config.EnableCors(new EnableCorsAttribute("https://localhost:4200", headers: "*", methods: "*"));
+            config.EnableCors(new EnableCorsAttribute("https://findmeapetshopwebsiteclient.azurewebsites.net", headers: " * ", methods: "*"));
             // Web API routes
             config.MapHttpAttributeRoutes();
 

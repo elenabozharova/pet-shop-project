@@ -11,16 +11,16 @@ import { Commented } from '../../models/commented.model';
 })
 export class PetshopsService {
   // here we make Http Request for the Petshops to the WebAPI
-  apiURL = 'https://localhost:44394/api';
+  apiURL2 = 'https://localhost:44394/api';
 
   constructor(private http: HttpClient) { }
 
   getPetshops(): any {
-    return this.http.get(this.apiURL + '/Petshops').toPromise();
+    return this.http.get(environment.apiURL2 + '/Petshops').toPromise();
   }
 
   getPetshop(id: number): any{
-    return this.http.get(this.apiURL + '/Petshops/' + id).toPromise();
+    return this.http.get(environment.apiURL2 + '/Petshops/' + id).toPromise();
   }
 
   getComments(): any{

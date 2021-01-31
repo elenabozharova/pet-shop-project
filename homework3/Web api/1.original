@@ -1,0 +1,13 @@
+*
+!obj\Docker\publish\*
+!obj\Docker\empty\
+docker-compose.yml
+Dockerfile
+**/*.cs
+**/bin
+**/obj
+**/out
+**/.vscode
+**/.vs
+.dotnet
+.Microsoft.DotNet.ImageBuilder

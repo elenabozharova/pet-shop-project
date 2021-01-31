@@ -9,16 +9,16 @@
 
 namespace Web_api.Models
 {
-    using Newtonsoft.Json;
-
+    using System;
+    using System.Collections.Generic;
+    
     public partial class Commented
     {
         public int Id_user { get; set; }
         public int Id_petshop { get; set; }
         public string Comment { get; set; }
-        [JsonIgnore]
+    
         public virtual Petshop Petshop { get; set; }
-     
         public virtual User User { get; set; }
     }
 }
